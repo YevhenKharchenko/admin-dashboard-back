@@ -1,0 +1,40 @@
+type: object
+required:
+  - _id
+  - name
+  - address
+  - suppliers
+  - date
+  - amount
+  - status
+properties:
+  _id:
+    description: "Suppliers's id"
+    type: string
+    example: 65e4decdd286b30065d54af9
+  name:
+    description: 'Name of supplier'
+    type: string
+    example: Alex Shatov
+  address:
+    description: 'Address of supplier'
+    type: string
+    example: 'Mripur-1'
+  suppliers:
+    description: "Supplier's company"
+    type: string
+    example: Beximco
+  date:
+    description: 'Date when supplier was added'
+    type: string
+    example: 'September 19, 2023'
+  amount:
+    description: "Amount of supplier's orders"
+    type: string
+    example: '৳ 2698.50'
+  status:
+    description: 'Status of supplier'
+    type: string
+    enum: ['Active', 'Deactive']
+    default: Active
+    example: Active

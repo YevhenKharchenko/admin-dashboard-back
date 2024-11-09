@@ -1,0 +1,55 @@
+type: object
+required:
+  - _id
+  - photo
+  - name
+  - address
+  - products
+  - price
+  - status
+  - order_date
+properties:
+  _id:
+    description: "Order's id"
+    type: string
+    example: 65e4decdd286b30065d54af9
+  photo:
+    description: "Link to order's photo"
+    type: string
+    format: binary
+    example: https://i.imgur.com/1As0akH.png
+  name:
+    description: "Name of order's owner"
+    type: string
+    example: Taras Shevchenko
+  address:
+    description: 'Address where to deliver order'
+    type: string
+    example: 'Khreshchatyk, Bldg. 51, Apt. 137'
+  products:
+    description: 'Quantity of products'
+    type: string
+    example: '12'
+  price:
+    description: "Order's price"
+    type: string
+    example: '890.66'
+  status:
+    description: 'Status of order'
+    type: string
+    enum:
+      [
+        'Completed',
+        'Confirmed',
+        'Pending',
+        'Cancelled',
+        'Processing',
+        'Shipped',
+        'Delivered',
+      ]
+    default: Completed
+    example: Completed
+  order_date:
+    description: 'Date of order'
+    type: string
+    example: 'July 31, 2023'

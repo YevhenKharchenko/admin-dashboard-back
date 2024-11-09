@@ -2,9 +2,6 @@ import { model, Schema } from 'mongoose';
 
 const productsSchema = new Schema(
   {
-    id: {
-      type: String,
-    },
     photo: {
       type: String,
     },

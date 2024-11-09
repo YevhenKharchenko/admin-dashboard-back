@@ -21,3 +21,7 @@ properties:
     description: "User's password"
     type: string
     example: 32rh0892g3f2
+  token:
+    description: "User's token"
+    type: string
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjRlNjlhYzFiZTFmNzBiNGVlOGQ2NCIsIm5hbWUiOiJDbGF5dG9uIFNhbnRvcyIsImVtYWlsIjoidmVuZG9yQGdtYWlsLmNvbSIsImlhdCI6MTczMDY1MDc1OSwiZXhwIjoxNzMwNjU0MzU5fQ.FUOY3CMOzmJ0wa3JZK8LSLH5L6hVDrDNuBhWr19v4tk

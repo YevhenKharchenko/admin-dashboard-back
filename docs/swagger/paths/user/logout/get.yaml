@@ -1,8 +1,8 @@
 tags:
-  - Auth
-summary: Refresh session
-operationId: refreshSession
-description: 'Refresh a session with payload'
+  - User
+summary: Logout user
+operationId: logoutUser
+description: 'Logout a user with payload'
 security:
   - bearerAuth: []
 requestBody:
@@ -14,17 +14,17 @@ requestBody:
           - email
           - password
         properties:
+          name:
+            description: "User's name"
+            type: string
+            example: John Doe
           email:
             description: "User's email"
             type: string
             example: johndoe@example.com
-          password:
-            description: "User's password"
-            type: string
-            example: 32rh0892g3f2
 responses:
   '200':
-    description: Logins a user
+    description: Logouts a user
     content:
       application/json:
         schema:
@@ -32,18 +32,13 @@ responses:
           required:
             - status
             - message
-            - data
           properties:
             status:
               type: integer
               example: 200
             message:
               type: string
-              example: Successfully refreshed a session!
-            data:
-              type: object
-              example:
-                accessToken: rAKUpayGiKV6v626e62vrwB9Kv+ebdJkwMPyQgr1
+              example: Successfully logged out an user!
   '400':
     $ref: ../../../components/responses/400.yaml
   '401':

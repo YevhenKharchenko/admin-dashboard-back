@@ -1,0 +1,80 @@
+tags:
+  - Suppliers
+summary: Update supplier
+operationId: updateSupplier
+description: 'Update a supplier with payload'
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: id
+    required: true
+    schema:
+      type: string
+      example: '65ca67e7ae7f10c88b598384'
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - name
+          - address
+          - suppliers
+          - date
+          - amount
+          - status
+        properties:
+          name:
+            description: 'Name of supplier'
+            type: string
+            example: Alex Shatov
+          address:
+            description: 'Address of supplier'
+            type: string
+            example: 'Mripur-1'
+          suppliers:
+            description: "Supplier's company"
+            type: string
+            example: Beximco
+          date:
+            description: 'Date when supplier was added'
+            type: string
+            example: 'September 19, 2023'
+          amount:
+            description: "Amount of supplier's orders"
+            type: string
+            example: '৳ 2698.50'
+          status:
+            description: 'Status of supplier'
+            type: string
+            enum: ['Active', 'Deactive']
+            default: Active
+            example: Active
+responses:
+  '200':
+    description: Updates a supplier
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully patched supplier with id 65e4decdd286b30065d54af9!
+            data:
+              type: object
+              $ref: ../../../components/schemas/supplier.yaml
+  '401':
+    $ref: ../../../components/responses/401.yaml
+  '403':
+    $ref: ../../../components/responses/403.yaml
+  '404':
+    $ref: ../../../components/responses/404.yaml

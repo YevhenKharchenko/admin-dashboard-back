@@ -21,4 +21,4 @@ content:
           properties:
             message:
               type: string
-              example: Current user do not have permission to access this contact
+              example: Current user do not have permission to access this information

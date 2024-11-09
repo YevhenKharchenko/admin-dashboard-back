@@ -40,7 +40,7 @@ export const loginUser = async (payload) => {
     },
     env('JWT_SECRET'),
     {
-      expiresIn: '1h',
+      expiresIn: '23h',
     },
   );
 

@@ -1,0 +1,25 @@
+type: object
+required:
+  - _id
+  - name
+  - amount
+  - type
+properties:
+  _id:
+    description: "Suppliers's id"
+    type: string
+    example: 65e4decdd286b30065d54af9
+  name:
+    description: 'Name of transaction'
+    type: string
+    example: 'Qonto billing'
+  amount:
+    description: 'Amount of transaction'
+    type: string
+    example: '-49.88'
+  type:
+    description: 'Status of transaction'
+    type: string
+    enum: ['Income', 'Expense', 'Error']
+    default: Income
+    example: Income

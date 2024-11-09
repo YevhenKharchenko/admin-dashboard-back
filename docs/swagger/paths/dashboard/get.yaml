@@ -1,8 +1,8 @@
 tags:
-  - Contacts
-summary: Get list of contacts
-operationId: getContacts
-description: 'Get list of contacts with this endpoint'
+  - Dashboard
+summary: Get dashboard info
+operationId: getDashboardInfo
+description: 'Get dashboard info with this endpoint'
 security:
   - bearerAuth: []
 parameters:
@@ -15,33 +15,10 @@ parameters:
     name: perPage
     schema:
       type: integer
-      example: 10
-  - in: query
-    name: sortBy
-    schema:
-      type: string
-      example: 'name'
-    description: "All contact's fields can be mentioned. Default value - name"
-  - in: query
-    name: sortOrder
-    schema:
-      type: string
-      enum: ['asc', 'desc']
-      example: 'asc'
-  - in: query
-    name: type
-    schema:
-      type: string
-      enum: ['work', 'home', 'personal']
-      example: home
-  - in: query
-    name: isFavourite
-    schema:
-      type: boolean
-      example: true
+      example: 6
 responses:
   '200':
-    description: Successfully found contacts!
+    description: Successfully found dashboard info!
     content:
       application/json:
         schema:
@@ -56,7 +33,7 @@ responses:
               example: 200
             message:
               type: string
-              example: Successfully found contacts!
+              example: Successfully found dashboard info!
             data:
               type: object
               required:
@@ -68,27 +45,40 @@ responses:
                 - hasNextPage
                 - hasPreviousPage
               properties:
-                data:
+                customers:
                   type: array
                   items:
-                    $ref: ../../components/schemas/contact.yaml
+                    $ref: ../../components/schemas/customer.yaml
+                transactions:
+                  type: array
+                  items:
+                    $ref: ../../components/schemas/transaction.yaml
                 page:
                   type: number
-                  example: 2
+                  example: 1
                 perPage:
                   type: number
-                  example: 4
+                  example: 5
                 totalItems:
                   type: number
-                  example: 4
+                  example: 20
                 totalPages:
                   type: number
                   example: 4
                 hasNextPage:
                   type: boolean
-                  example: false
+                  example: true
                 hasPreviousPage:
                   type: boolean
-                  example: true
+                  example: false
+                productsCount:
+                  type: number
+                  example: 60
+                suppliersCount:
+                  type: number
+                  example: 5
+                customersCount:
+                  type: number
+                  example: 88
   '401':
     $ref: ../../components/responses/401.yaml
