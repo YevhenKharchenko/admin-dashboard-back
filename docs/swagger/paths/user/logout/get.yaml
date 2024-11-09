@@ -2,26 +2,9 @@ tags:
   - User
 summary: Logout user
 operationId: logoutUser
-description: 'Logout a user with payload'
+description: 'Logout user'
 security:
   - bearerAuth: []
-requestBody:
-  content:
-    application/json:
-      schema:
-        type: object
-        required:
-          - email
-          - password
-        properties:
-          name:
-            description: "User's name"
-            type: string
-            example: John Doe
-          email:
-            description: "User's email"
-            type: string
-            example: johndoe@example.com
 responses:
   '200':
     description: Logouts a user

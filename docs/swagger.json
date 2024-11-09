@@ -11,9 +11,6 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/api"
-    },
-    {
       "url": "https://admin-dashboard-back-n51a.onrender.com/api"
     }
   ],
@@ -70,12 +67,12 @@
                   "email": {
                     "description": "User's email",
                     "type": "string",
-                    "example": "johndoe@example.com"
+                    "example": "vendor@gmail.com"
                   },
                   "password": {
                     "description": "User's password",
                     "type": "string",
-                    "example": "32rh0892g3f2"
+                    "example": "claytonsantos"
                   }
                 }
               }
@@ -122,43 +119,18 @@
       }
     },
     "/user/logout": {
-      "post": {
+      "get": {
         "tags": [
           "User"
         ],
         "summary": "Logout user",
         "operationId": "logoutUser",
-        "description": "Logout a user with payload",
+        "description": "Logout user",
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "email",
-                  "password"
-                ],
-                "properties": {
-                  "name": {
-                    "description": "User's name",
-                    "type": "string",
-                    "example": "John Doe"
-                  },
-                  "email": {
-                    "description": "User's email",
-                    "type": "string",
-                    "example": "johndoe@example.com"
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Logouts a user",
@@ -194,7 +166,7 @@
       }
     },
     "/user/user-info": {
-      "post": {
+      "get": {
         "tags": [
           "User"
         ],
@@ -206,31 +178,6 @@
             "bearerAuth": []
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "email",
-                  "password"
-                ],
-                "properties": {
-                  "email": {
-                    "description": "User's email",
-                    "type": "string",
-                    "example": "johndoe@example.com"
-                  },
-                  "password": {
-                    "description": "User's password",
-                    "type": "string",
-                    "example": "32rh0892g3f2"
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Fetches user info",
@@ -1489,17 +1436,17 @@
           "name": {
             "description": "User's name",
             "type": "string",
-            "example": "John Doe"
+            "example": "Clayton Santos"
           },
           "email": {
-            "description": "Contact's email",
+            "description": "User's email",
             "type": "string",
-            "example": "johndoe@example.com"
+            "example": "vendor@gmail.com"
           },
           "password": {
             "description": "User's password",
             "type": "string",
-            "example": "32rh0892g3f2"
+            "example": "claytonsantos"
           },
           "token": {
             "description": "User's token",

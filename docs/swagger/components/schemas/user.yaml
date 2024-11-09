@@ -12,15 +12,15 @@ properties:
   name:
     description: "User's name"
     type: string
-    example: John Doe
+    example: Clayton Santos
   email:
-    description: "Contact's email"
+    description: "User's email"
     type: string
-    example: johndoe@example.com
+    example: vendor@gmail.com
   password:
     description: "User's password"
     type: string
-    example: 32rh0892g3f2
+    example: claytonsantos
   token:
     description: "User's token"
     type: string
