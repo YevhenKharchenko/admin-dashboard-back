@@ -11,10 +11,10 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000/api"
     },
     {
-      "url": "https://admin-dashboard-back-n51a.onrender.com"
+      "url": "https://admin-dashboard-back-n51a.onrender.com/api"
     }
   ],
   "tags": [
