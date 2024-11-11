@@ -8,7 +8,7 @@ import { parseFilterParams } from '../utils/parseFilterParams.js';
 import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 import { parseSortParams } from '../utils/parseSortParams.js';
 
-export const getSuppliersController = async (req, res, next) => {
+export const getSuppliersController = async (req, res) => {
   const { page, perPage } = parsePaginationParams(req.query);
   const { sortBy, sortOrder } = parseSortParams(req.query);
   const filter = parseFilterParams(req.query);
@@ -16,6 +16,9 @@ export const getSuppliersController = async (req, res, next) => {
   const suppliers = await getAllSuppliers({
     page,
     perPage,
+    sortBy,
+    sortOrder,
+    filter,
   });
 
   res.status(200).json({

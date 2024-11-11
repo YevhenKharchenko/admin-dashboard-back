@@ -17,8 +17,9 @@ export const getDashboardInfo = async ({
 
   const transactionsQuery = TransactionsCollection.find();
 
-  if (filter.type) {
-    transactionsQuery.where('name').equals(filter.type);
+  if (filter.name) {
+    const nameRegex = new RegExp(filter.name, 'i');
+    transactionsQuery.where('name').regex(nameRegex);
   }
 
   const [

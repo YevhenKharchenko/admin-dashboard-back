@@ -14,8 +14,9 @@ export const getAllOrders = async ({
 
   const ordersQuery = OrdersCollection.find();
 
-  if (filter.type) {
-    ordersQuery.where('name').equals(filter.type);
+  if (filter.name) {
+    const nameRegex = new RegExp(filter.name, 'i');
+    ordersQuery.where('name').regex(nameRegex);
   }
 
   const [ordersCount, orders] = await Promise.all([

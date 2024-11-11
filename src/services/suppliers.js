@@ -14,8 +14,9 @@ export const getAllSuppliers = async ({
 
   const suppliersQuery = SuppliersCollection.find();
 
-  if (filter.type) {
-    suppliersQuery.where('name').equals(filter.type);
+  if (filter.name) {
+    const nameRegex = new RegExp(filter.name, 'i');
+    suppliersQuery.where('name').regex(nameRegex);
   }
 
   const [suppliersCount, suppliers] = await Promise.all([

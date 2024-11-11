@@ -14,8 +14,9 @@ export const getAllCustomers = async ({
 
   const customersQuery = CustomersCollection.find();
 
-  if (filter.type) {
-    customersQuery.where('name').equals(filter.type);
+  if (filter.name) {
+    const nameRegex = new RegExp(filter.name, 'i');
+    customersQuery.where('name').regex(nameRegex);
   }
 
   const [customersCount, customers] = await Promise.all([

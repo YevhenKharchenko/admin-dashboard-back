@@ -14,8 +14,9 @@ export const getAllProducts = async ({
 
   const productsQuery = ProductsCollection.find();
 
-  if (filter.type) {
-    productsQuery.where('name').equals(filter.type);
+  if (filter.name) {
+    const nameRegex = new RegExp(filter.name, 'i');
+    productsQuery.where('name').regex(nameRegex);
   }
 
   const [productsCount, products] = await Promise.all([
